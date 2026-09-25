@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.DS_Store
+# videos pesados (el original lo tiene Ivette en OneDrive)
+video_original.mp4
+video_estable.mp4
+video_resultado.mp4
+comparacion_estabilizacion.mp4
+procesamiento_paso_a_paso.mp4
+*.log
