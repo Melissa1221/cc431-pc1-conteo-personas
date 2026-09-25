@@ -1,12 +1,12 @@
 ventana  tiempo      auto(izq,der)  manual(izq,der)
-    0     0.0-  13.3     2   2          4   2   <-- pareja camisa roja/celeste y dos mas hacia la izq; chompa azul y jean cerca de la camara hacia la der
+    0     0.0-  13.3     3   1          4   2   <-- pareja camisa roja/celeste y dos mas hacia la izq; chompa azul y jean cerca de la camara hacia la der
     1    33.0-  36.2     0   0          0   0
     2    40.6-  46.8     0   1          0   2   <-- pareja polo rojo por el carril del fondo
     3    64.1-  70.8     2   0          2   0
     4   129.3- 134.3     0   1          0   1
     5   139.5- 144.9     1   0          1   0
     6   156.2- 160.4     1   0          1   0
-    7   177.7- 182.6     1   0          1   0
+    7   177.7- 182.6     0   0          1   0   <-- casaca negra carril del fondo
     8   198.3- 203.4     0   1          0   1
     9   213.6- 222.0     0   0          0   0
    10   232.1- 235.9     1   0          1   0
@@ -16,26 +16,26 @@ ventana  tiempo      auto(izq,der)  manual(izq,der)
    14   292.8- 298.6     0   1          0   1
    15   363.4- 371.6     0   1          0   3   <-- un chico viene de la derecha y regresa con el grupo (no cuenta)
    16   392.0- 396.3     0   1          0   1
-   17   397.1- 404.7     1   1          2   0   <-- 
+   17   397.1- 404.7     2   0          2   0
    18   405.6- 410.7     1   0          1   1   <-- se cruzan en el medio
    19   412.0- 416.7     0   1          0   1
    20   418.1- 423.4     0   1          0   1
    21   423.6- 431.4     0   1          1   1   <-- varios parados junto a los tachos
-   22   431.6- 441.3     1   2          1   2
+   22   431.6- 441.3     1   1          1   2   <-- dos estaban parados y luego avanzan a la derecha
    23   444.7- 450.4     1   0          1   0
-   24   453.3- 474.2     2   0          4   4   <-- GRUPO DENSO: ~5 entran por la derecha y se paran junto a los tachos; conteo aproximado
+   24   453.3- 474.2     3   0          4   4   <-- GRUPO DENSO: ~5 entran por la derecha y se paran junto a los tachos; conteo aproximado
    25   474.8- 483.7     2   0          2   0
    26   494.5- 498.8     1   0          3   0   <-- grupo pegado a la camara; aproximado
    27   502.8- 507.5     0   1          0   1
    28   507.6- 511.8     1   0          1   0
-   29   514.8- 530.8     0   6          0   6
+   29   514.8- 530.8     1   4          0   6   <-- grupo denso hacia la derecha; aproximado
    30   542.5- 545.5     0   0          0   0
    31   574.8- 580.5     0   1          0   1
    32   593.9- 598.3     0   1          0   1
 
-ventanas exactas: 25 de 33
-total automatico: 47  (izq 19, der 28)
+ventanas exactas: 23 de 33
+total automatico: 45  (izq 22, der 23)
 total manual:     62  (izq 27, der 35)
-personas que se escaparon: 24 %
-solo gente caminando sola: auto 18 vs manual 20
-factor de correccion (manual / automatico): 1.32
+personas que se escaparon: 27 %
+solo gente caminando sola: auto 17 vs manual 20
+factor de correccion (manual / automatico): 1.38

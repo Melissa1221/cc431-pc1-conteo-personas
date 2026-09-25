@@ -9,3 +9,5 @@ __pycache__/
 /procesamiento_paso_a_paso.mp4
 *.log
 frecuencia.npy
+/video_estable_flujo.mp4
+movimiento_flujo.npy
