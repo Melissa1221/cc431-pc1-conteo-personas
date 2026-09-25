@@ -8,3 +8,4 @@ __pycache__/
 /comparacion_estabilizacion.mp4
 /procesamiento_paso_a_paso.mp4
 *.log
+frecuencia.npy
