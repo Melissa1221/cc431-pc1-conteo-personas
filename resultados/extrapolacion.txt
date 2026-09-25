@@ -1,0 +1,18 @@
+muestra: 47 personas contadas en 9.98 min
+corregido por grupos (x1.32): 62 personas
+ritmo: 6.2 personas/min
+
+Escenario A - todo el dia igual que la muestra
+  hora:        373
+  dia:        5591
+  semana:    27956
+  mes:      111824
+
+Escenario B - valle 4.1/min (clases en curso) + pico 11.0/min (cambio de hora)
+  hora:        269
+  dia:        4039
+  semana:    20197
+  mes:       80788
+
+el pico es 2.7 veces el valle
+grafico guardado en flujo_por_minuto.png

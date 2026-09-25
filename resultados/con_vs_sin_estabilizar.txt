@@ -1,0 +1,16 @@
+Mismo main.py, mismas zonas, mismo margen (+200 px sobre el fondo).
+Unica diferencia: el video de entrada.
+
+                              sin estabilizar   estabilizado   conteo manual
+personas contadas                   30               47              62
+  hacia la izquierda                18               19              27
+  hacia la derecha                  12               28              35
+ventanas exactas (de 33)            14               25              --
+gente caminando sola (de 20)        12               18              20
+factor de correccion              2.07             1.32              --
+
+Sin estabilizar, el celular se va moviendo hasta 38 px en horizontal y 62 px en
+vertical (ver movimiento_camara.png). Las zonas A y B quedan fijas en la imagen,
+pero la escena se desplaza hacia arriba: las zonas terminan mirando un pedazo de
+piso mas cercano a la camara, y la gente que camina pegada a la jardinera (carril
+del fondo, la mayoria) ya no las pisa. Por eso se pierden casi la mitad.
