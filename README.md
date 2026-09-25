@@ -44,6 +44,7 @@ Como grabamos con el celular en la mano, antes de contar **estabilizamos el vide
 | `main.py` | El contador. Mismo procesamiento que el profe, detecta pulsos, los empareja y dibuja los contadores sobre el video. |
 | `evaluar.py` | Compara el conteo automático con nuestro conteo manual (`conteo_manual.csv`). |
 | `reporte.py` | Gráfico de personas por minuto y extrapolación a hora, día, semana y mes. |
+| `mapa_calor.py` | Suma la imagen dilatada de todos los frames para ver por dónde camina la gente. |
 | `material_expo.py` | Videos y gráficos para la exposición. |
 
 ```bash
@@ -69,11 +70,18 @@ Versiones: las mismas del repo del profe (`numpy==1.26.4`, `opencv-python==4.9.0
 | Gente caminando sola | 18 de 20 detectadas |
 | Factor de corrección | 1.32 (manual / automático) |
 
-- Video con los contadores: `resultados/video_resultado.mp4`
+- Video con los contadores: `resultados/video_resultado.mp4` (a la izquierda el video, a la derecha la imagen dilatada: lo que "ve" el programa)
 - Original vs estabilizado (x20): `resultados/comparacion_estabilizacion.mp4`
 - Procesamiento paso a paso: `resultados/procesamiento_paso_a_paso.mp4`
 
 ![flujo](resultados/flujo_por_minuto.png)
+
+### ¿Por dónde camina la gente?
+
+![mapa](resultados/mapa_calor.png)
+
+La mayoría camina **pegada a la jardinera**: esa franja está ocupada 1.5 % del tiempo, contra
+0.4 % cerca de la cámara. Por eso las zonas A y B empiezan justo en el borde de la jardinera.
 
 ### ¿Sirvió estabilizar?
 

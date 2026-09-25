@@ -39,7 +39,8 @@ video = cv2.VideoCapture(video_path)
 fps = video.get(cv2.CAP_PROP_FPS)
 w = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 h = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
-out = cv2.VideoWriter(salida, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w, h))
+# el video de salida tiene dos paneles: el video y la imagen dilatada (lo que "ve" el programa)
+out = cv2.VideoWriter(salida, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w * 2, h))
 kernel = np.ones((5, 5), np.int8)
 
 zonas = [zonaA, zonaB]
@@ -67,6 +68,8 @@ while True:
     imgTH = cv2.adaptiveThreshold(imgBN, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 25, 16)
     imgMedian = cv2.medianBlur(imgTH, 5)
     imgDil = cv2.dilate(imgMedian, kernel)
+
+    panel = cv2.cvtColor(imgDil, cv2.COLOR_GRAY2BGR)
 
     for z in range(2):
         x, y, zw, zh = zonas[z]
@@ -122,6 +125,8 @@ while True:
         color = (0, 0, 255) if ocupada[z] else (0, 255, 0)
         cv2.rectangle(img, (x, y), (x+zw, y+zh), color, 2)
         cv2.putText(img, 'AB'[z] + ' ' + str(count), (x, y - 6), cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 1)
+        cv2.rectangle(panel, (x, y), (x+zw, y+zh), color, 2)
+        cv2.putText(panel, 'AB'[z] + ' ' + str(count), (x, y - 6), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
 
     # los pulsos sin pareja se olvidan despues de MAX_SEG
     for z in range(2):
@@ -137,11 +142,12 @@ while True:
     if aviso is not None and frame - aviso[2] < fps:
         texto = aviso[0] + ' +' + str(aviso[1])
         cv2.putText(img, texto, (zonaA[0] + 20, zonaA[1] + zonaA[3] + 45), cv2.FONT_HERSHEY_SIMPLEX, 1.4, (0, 0, 255), 3)
-    out.write(img)
+    cv2.putText(panel, 'imagen dilatada', (10, 130), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+    out.write(np.hstack([img, panel]))
 
     if MOSTRAR:
         cv2.imshow('video', img)
-        # cv2.imshow('video Dilatada', imgDil)
+        cv2.imshow('video Dilatada', panel)
         if cv2.waitKey(1) == 27:
             break
 
